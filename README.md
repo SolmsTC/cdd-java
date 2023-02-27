@@ -26,6 +26,7 @@ This project aims to make Contract-Driven Development efficient and easy, simpli
 <b>TODO</b>
 
 <h2>User's guide</h2>
+<h3>CDD modules, what each provides and the dependencies between them</h3>
 <b>TODO</b>
 <h3>Upgrading interfaces to component contracts</h3>
 <h4>The <i>Java Based Constraint Language (JBCL)</h4>
