@@ -28,7 +28,8 @@ This project aims to make Contract-Driven Development efficient and easy, simpli
 <h2>User's guide</h2>
 <h3>CDD modules, what each provides and the dependencies between them</h3>
 <b>TODO</b>
-<h3>Upgrading interfaces to component contracts</h3>
+<h3>Contract specification</h3>
+A contract is a formalization of the component requirements and is done by upgrading component interfaces to component contracts by annotating the services with <code>PreCondition</code>, <code>PostCondition</code> and <code>Invariance</code> constraints. For each of these the <code>Contract</code> module provides an annotation with a manadatory <code>name</code> parameter, a parameter, <code>constraint</code> used to specify the formal constraint specification using a simple <i>Java Based Constraint Language (JBCL), and an optional <code>description</code>.
 <h4>The <i>Java Based Constraint Language (JBCL)</h4>
 Each contract constraint annotations either a <code>Precondition</code>, a <code>Postcondition</code> or an <code>Invariance</code> and contains a parameter <code>constraint</code> which is a predicate specifying the constraint in the <i>Java-Based Constraint Language (JBCL)</i>.
   
