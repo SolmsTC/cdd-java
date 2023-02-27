@@ -14,7 +14,7 @@ This project aims to make Contract-Driven Development efficient and easy, simpli
 <h2>User's guide</h2>
 <b>TODO</b>
 <h3>Upgrading interfaces to component contracts</h3>
-<h4>The <i>Java Based Constrint Language (JBCL)</h4>
+<h4>The <i>Java Based Constraint Language (JBCL)</h4>
 Each contract constraint annotations either a <code>Precondition</code>, a <code>Postcondition</code> or an <code>Invariance</code> and contains a parameter <code>constraint</code> which is a predicate specifying the constraint in the <i>Java-Based Constraint Language (JBCL)</i>.
   
 A <i>JBCL</i> encoded constraint is a simple Java based expression for which the following hold:
@@ -31,7 +31,8 @@ public interface Acount
   ...
 }
 </code>
- Note that the pre-evaluations are equivalent to the <code>@pre</code> clauses available in the <i>Object Constraint Language (OCL)</i>.
+ Note that the pre-evaluations are equivalent to the <code>@pre</code> clauses available in the <i>Object Constraint Language (OCL)</i>.</li>
+</ul>   
 
 
 The project provides 
