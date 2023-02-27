@@ -3,7 +3,7 @@ This project aims to make Contract-Driven Development efficient and easy, simpli
 <ol>
   <li>To make it really easy and efficient to specify component contracts by annotating interfaces methods with pre-conditions, post-conditions and invariance constraints using a Java like syntax. </li>
   <li>To be able to generate <i>Contract Validating Interceptors (CVIs)</i> used for
-    <ul> 
+    <ol> 
       <li><b>unit testing</b>, by calling the CVI-wrapped component in a mocking harness with the unit test data for the different test scenarions sampled from equivalence partions and their boundaries.
         <ul>
           <li>i.e. one injects the CVI-wrapped component and mock objects for lower level service providers/li>
@@ -19,7 +19,7 @@ This project aims to make Contract-Driven Development efficient and easy, simpli
         </ul>     
 </li>
       <li><b>service provider oversight</b>, if a system makes use of external service providers one can wrap the service-provider addapters with CVIs in order to monitor that the external service providers provide their seivises according to the contract.</li>      
-    </ul>
+    </ol>
 </ol>    
   
 <h2>A simple example</h2>
