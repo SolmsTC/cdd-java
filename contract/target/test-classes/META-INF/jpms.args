@@ -1,0 +1,4 @@
+--patch-module
+org.urdad.cdd.contract=_
+--add-reads
+org.urdad.cdd.contract=ALL-UNNAMED

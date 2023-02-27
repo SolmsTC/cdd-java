@@ -1,0 +1,4 @@
+--patch-module
+org.urdad.cdd.exceptions=_
+--add-reads
+org.urdad.cdd.exceptions=ALL-UNNAMED

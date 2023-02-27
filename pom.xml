@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <groupId>org.urdad</groupId>
+  <artifactId>cdd</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>CDD - Contract-Driven Development</name>
+
+  <developers>
+  	<developer>
+  		<name>Fritz Solms</name>
+  		<email>fritz@solmstc.com</email>
+  		<timezone>SAST</timezone>
+  		<organization>
+  			Solms Training, Consulting and Development
+  		</organization>
+  		<organizationUrl>http://www.solmstc.com</organizationUrl>
+  	</developer>
+    <developer>
+      <name>Justus Posthume</name>
+    </developer>  
+  </developers>
+  
+  <properties>
+    <revision>1.0-SNAPSHOT</revision>
+    
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    
+    <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
+    
+    <auto-service.version>1.0.1</auto-service.version>
+    
+    <javapoet.version>1.13.0</javapoet.version>
+  </properties>
+  
+  <modules>
+    <module>contract</module>
+    <module>exceptions</module>
+    <module>examples/simpleExample</module>
+    <module>contractAnnotationProcessor</module>
+  </modules>  
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
