@@ -29,7 +29,14 @@
 
     <dependency>
       <groupId>org.urdad.cdd</groupId>
-      <artifactId>contractValidatingInterceptor</artifactId>
+      <artifactId>contractAnnotationProcessor</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <!--<scope>provided</scope>-->
+    </dependency>
+
+    <dependency>    
+      <groupId>org.urdad.cdd</groupId>
+      <artifactId>basicContractValidationInterceptor</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
 
@@ -57,12 +64,21 @@
           <source>17</source>
           <target>17</target>
           <encoding>UTF-8</encoding>
-<!--          <compilerArgument>
-            -processor-module-path path ???
+<!--          <configuration>
+              <annotationProcessorPaths>
+                  <annotationProcessorPath>
+                      <groupId>org.urdad.cdd</groupId>
+                      <artifactId>contractAnnotationProcessor</artifactId>
+                      <version>1.0-SNAPSHOT</version>
+                  </annotationProcessorPath>
+              </annotationProcessorPaths>
+          </configuration>          
+          <compilerArgument>
+            - -processor-module-path=/usr/lib/jvm/java-19-openjdk/jmods=${project.directory}/modules/
           </compilerArgument>-->
           <generatedSourcesDirectory>${project.build.directory}/generated-sources/</generatedSourcesDirectory>
           <annotationProcessors>
-            <annotationProcessor>org.urdad.cdd.contractValidatingInterceptor.ContractAnnotationProcessor</annotationProcessor>
+            <annotationProcessor>org.urdad.cdd.contractAnnotationProcessor.ContractAnnotationProcessor</annotationProcessor>
           </annotationProcessors>
         </configuration>
       </plugin>

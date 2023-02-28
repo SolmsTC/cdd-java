@@ -68,16 +68,45 @@ public class ContractAnnotationProcessor extends AbstractProcessor
             -> annotatedElement.getKind() == ElementKind.INTERFACE));
 
       annotatedTypes.get(false).forEach(nonInterfaceContract
-          -> processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR,
-              "@Contract annotation may only be applied to interfaces.",
-              nonInterfaceContract));
+          -> compilationError("@Contract annotation may only be applied to interfaces.", nonInterfaceContract));
 
-      annotatedTypes.get(true).forEach(contract
-        -> {contractProcessors.forEach(contractProcessor 
-          -> contractProcessor.process(contract));});
-    }
+        annotatedTypes.get(true).forEach(contract
+          -> {contractProcessors.forEach(contractProcessor 
+            -> processContract(contractProcessor, contract));});
+//                try { contractProcessor.process(contract) }
+//                catch (ContractProcessor.ContractEncodingException e) {}
+//          }    );});
+      
+//      
+//        annotatedTypes.get(true).forEach(contract
+//          -> {contractProcessors.forEach(contractProcessor 
+//            -> {
+//                try { contractProcessor.process(contract) }
+//                catch (ContractProcessor.ContractEncodingException e) {}
+//          }    );});
+    }    
     return true;
   } 
+    
+  private void processContract(ContractProcessor contractProcessor, Element contract )
+  {
+    try { 
+      contractProcessor.process(contract, processingEnv.getFiler());
+    }
+    catch (ContractEncodingException e) 
+    {
+      compilationError(e.getMessage(), e.getElement());
+    }
+  }
+  
+  private void compilationError(String msg, Element element)
+  {
+    logger.error(element.getSimpleName() + msg);
+    processingEnv.getMessager().printMessage(Diagnostic.Kind.ERROR,
+              "@Contract annotation may only be applied to interfaces.",
+              element);
+  }
+    
   private static final Logger logger = LogManager.getLogger(ContractAnnotationProcessor.class);
   private static final Iterable<ContractProcessor> contractProcessors 
     = ServiceLoader.loadInstalled(ContractProcessor.class);

@@ -20,4 +20,6 @@ module org.urdad.cdd.contractValidatingInterceptor
   
   provides javax.annotation.processing.Processor 
       with org.urdad.cdd.contractAnnotationProcessor.ContractAnnotationProcessor;
+  
+  uses org.urdad.cdd.contractAnnotationProcessor.ContractProcessor;
 }

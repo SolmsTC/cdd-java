@@ -1,2 +1,6 @@
 module-info.class
-org/urdad/cdd/contractValidatingInterceptor/ContractValidationInterceptorGenerator.class
+org/urdad/cdd/contractAnnotationProcessor/ContractProcessor.class
+org/urdad/cdd/contractAnnotationProcessor/ContractNotInterface.class
+org/urdad/cdd/contractAnnotationProcessor/CannotParseConstraint.class
+org/urdad/cdd/contractAnnotationProcessor/ContractAnnotationProcessor.class
+org/urdad/cdd/contractAnnotationProcessor/ContractEncodingException.class
