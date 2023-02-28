@@ -25,5 +25,5 @@ module basicContractValidationInterceptor {
   requires j2objc.annotations;
   
   provides org.urdad.cdd.contractAnnotationProcessor.ContractProcessor 
-      with org.urdAad.cdd.basicContractValidationInterceptor.BasicContractValidationInterceptor;
+      with org.urdad.cdd.basicContractValidationInterceptor.BasicContractValidationInterceptor;
 }

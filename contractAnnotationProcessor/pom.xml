@@ -27,19 +27,24 @@
       <artifactId>exceptions</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
+    
+    <dependency> <!-- TODO: remove once modules working with annotation processor.-->
+      <groupId>org.urdad.cdd</groupId>
+      <artifactId>basicContractValidationInterceptor</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
 
     <dependency>
       <groupId>com.google.auto.service</groupId>
       <artifactId>auto-service-annotations</artifactId>
       <version>${auto-service.version}</version>
     </dependency>
-<!--        
+        
     <dependency>
       <groupId>com.google.auto.service</groupId>
       <artifactId>auto-service</artifactId>
       <version>${auto-service.version}</version>
     </dependency>    
--->
 
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>

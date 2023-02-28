@@ -19,6 +19,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.google.auto.service.AutoService;
+import java.util.HashSet;
 import java.util.ServiceLoader;
 
 /**
@@ -43,6 +44,7 @@ public class ContractAnnotationProcessor extends AbstractProcessor
   public synchronized void init(ProcessingEnvironment processingEnv)
   {
     super.init(processingEnv);
+//    contractProcessors.add(new )
     if (contractProcessors.iterator().hasNext())
       logger.info("ContractAnnotationProcessor initialized.");
     else
@@ -70,20 +72,9 @@ public class ContractAnnotationProcessor extends AbstractProcessor
       annotatedTypes.get(false).forEach(nonInterfaceContract
           -> compilationError("@Contract annotation may only be applied to interfaces.", nonInterfaceContract));
 
-        annotatedTypes.get(true).forEach(contract
-          -> {contractProcessors.forEach(contractProcessor 
-            -> processContract(contractProcessor, contract));});
-//                try { contractProcessor.process(contract) }
-//                catch (ContractProcessor.ContractEncodingException e) {}
-//          }    );});
-      
-//      
-//        annotatedTypes.get(true).forEach(contract
-//          -> {contractProcessors.forEach(contractProcessor 
-//            -> {
-//                try { contractProcessor.process(contract) }
-//                catch (ContractProcessor.ContractEncodingException e) {}
-//          }    );});
+      annotatedTypes.get(true).forEach(contract
+        -> {contractProcessors.forEach(contractProcessor 
+          -> processContract(contractProcessor, contract));});
     }    
     return true;
   } 
@@ -108,6 +99,7 @@ public class ContractAnnotationProcessor extends AbstractProcessor
   }
     
   private static final Logger logger = LogManager.getLogger(ContractAnnotationProcessor.class);
+  
   private static final Iterable<ContractProcessor> contractProcessors 
     = ServiceLoader.loadInstalled(ContractProcessor.class);
 }

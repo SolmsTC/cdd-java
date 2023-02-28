@@ -1,4 +1,4 @@
-package org.urdAad.cdd.basicContractValidationInterceptor;
+package org.urdad.cdd.basicContractValidationInterceptor;
 
 import javax.annotation.processing.Filer;
 import javax.lang.model.element.Element;
