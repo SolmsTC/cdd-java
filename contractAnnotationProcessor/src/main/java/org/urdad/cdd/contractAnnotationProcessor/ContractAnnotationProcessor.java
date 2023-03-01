@@ -19,6 +19,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.google.auto.service.AutoService;
+import java.io.IOException;
 import java.util.HashSet;
 import java.util.ServiceLoader;
 
@@ -44,7 +45,9 @@ public class ContractAnnotationProcessor extends AbstractProcessor
   public synchronized void init(ProcessingEnvironment processingEnv)
   {
     super.init(processingEnv);
-//    contractProcessors.add(new )
+    
+    contractProcessors.add(new BasicContractValidationInterceptor());
+        //TODO remove above once service provider discovery is used - see private member vars
     if (contractProcessors.iterator().hasNext())
       logger.info("ContractAnnotationProcessor initialized.");
     else
@@ -88,6 +91,10 @@ public class ContractAnnotationProcessor extends AbstractProcessor
     {
       compilationError(e.getMessage(), e.getElement());
     }
+    catch(IOException e)
+    {
+      compilationError(e.getMessage(), contract);
+    }
   }
   
   private void compilationError(String msg, Element element)
@@ -99,7 +106,9 @@ public class ContractAnnotationProcessor extends AbstractProcessor
   }
     
   private static final Logger logger = LogManager.getLogger(ContractAnnotationProcessor.class);
-  
-  private static final Iterable<ContractProcessor> contractProcessors 
-    = ServiceLoader.loadInstalled(ContractProcessor.class);
+
+//TODO Revert back to service provider discovery  
+//  private static final Iterable<ContractProcessor> contractProcessors 
+//    = ServiceLoader.loadInstalled(ContractProcessor.class);
+  private static final Set<ContractProcessor> contractProcessors = new HashSet<>();
 }

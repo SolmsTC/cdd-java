@@ -44,7 +44,6 @@
     <module>exceptions</module>
     <module>examples/simpleExample</module>
     <module>contractAnnotationProcessor</module>
-    <module>basicContractValidationInterceptor</module>
   </modules>  
   
   <build>

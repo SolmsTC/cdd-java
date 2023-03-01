@@ -1,14 +1,13 @@
-/**
- * 
- */
 module org.urdad.cdd.contractValidatingInterceptor 
 {
   requires java.compiler;
   
   requires org.urdad.cdd.contract;
   requires org.urdad.cdd.exceptions;
+  
+  requires com.squareup.javapoet;
+  
   requires com.google.auto.service;
-  requires com.google.auto.service.processor;
   
   requires org.apache.logging.log4j;
   requires org.apache.logging.log4j.core;
@@ -22,4 +21,6 @@ module org.urdad.cdd.contractValidatingInterceptor
       with org.urdad.cdd.contractAnnotationProcessor.ContractAnnotationProcessor;
   
   uses org.urdad.cdd.contractAnnotationProcessor.ContractProcessor;
+  provides org.urdad.cdd.contractAnnotationProcessor.ContractProcessor
+      with org.urdad.cdd.contractAnnotationProcessor.BasicContractValidationInterceptor;
 }

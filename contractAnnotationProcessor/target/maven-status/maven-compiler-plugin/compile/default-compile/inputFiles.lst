@@ -2,5 +2,6 @@
 /home/fritz/repos_thirdParty/github/cdd-java/contractAnnotationProcessor/src/main/java/org/urdad/cdd/contractAnnotationProcessor/ContractAnnotationProcessor.java
 /home/fritz/repos_thirdParty/github/cdd-java/contractAnnotationProcessor/src/main/java/org/urdad/cdd/contractAnnotationProcessor/CannotParseConstraint.java
 /home/fritz/repos_thirdParty/github/cdd-java/contractAnnotationProcessor/src/main/java/org/urdad/cdd/contractAnnotationProcessor/ContractNotInterface.java
+/home/fritz/repos_thirdParty/github/cdd-java/contractAnnotationProcessor/src/main/java/org/urdad/cdd/contractAnnotationProcessor/BasicContractValidationInterceptor.java
 /home/fritz/repos_thirdParty/github/cdd-java/contractAnnotationProcessor/src/main/java/org/urdad/cdd/contractAnnotationProcessor/ContractEncodingException.java
 /home/fritz/repos_thirdParty/github/cdd-java/contractAnnotationProcessor/src/main/java/module-info.java
